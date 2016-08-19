@@ -4,7 +4,6 @@ require "sinatra/reloader" if development?
 require 'pry'
 require 'net/https'
 require 'open-uri'
-require 'nokogiri'
 require 'easy_translate'
 
 #setting
