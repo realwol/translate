@@ -20,10 +20,11 @@ get '/translate/*/to/*' do
 end
 
 get '/btranslate/*/to/*' do
-  t = params['splat'].first
+  t = params['splat'].first.split('_')
+  t1 = t.map{|tt| "[#{tt}]" }
   p = params['splat'][1]
   @BingTranslate =BingTranslator.new('amazon_tmall_translate','73niRgqDpecdRvWW9CDm+pqSUaUiDPpu0KqocXgW16o=')
-  result = @BingTranslate.translate(t, to: p)
+  result = @BingTranslate.translate(t1, to: p)
   "#{result}"
 end
 
