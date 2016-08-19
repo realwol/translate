@@ -1,0 +1,1 @@
+system('kill $(lsof -i -t :3000)')
