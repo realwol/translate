@@ -5,11 +5,13 @@ require 'net/https'
 require 'open-uri'
 require 'easy_translate'
 require 'bing_translator'
+require 'thin'
 
 #setting
 set :bind, '0.0.0.0'
 set :port, 4567
 set :environment, :production
+set :logging, true
 EasyTranslate.api_key = 'AIzaSyB3MKHWN3fXuKX7UjvtsoX5AamscLCQY3g'
 
 get '/translate/*/to/*' do
